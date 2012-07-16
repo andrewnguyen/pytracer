@@ -11,12 +11,12 @@ import film as fm
 
 FOVX = 45.0
 FOVY = 45.0
-PIXWIDTH = 130
+PIXWIDTH = 140
 PIXHEIGHT = 100
 
 
 prims = [sc.make_sphere(vr.make_vector(0.0, 0.0, -4.0), 1.0),
-         sc.make_sphere(vr.make_vector(-3.0, -1.0, -11.0), 2.0)]
+         sc.make_sphere(vr.make_vector(-3.0, -2.0, -11.0), 2.0)]
 
 lights = [lt.make_light(2.5, 4.0, 10.0, 7.0),]
 
