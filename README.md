@@ -11,5 +11,5 @@ python3 pytracer
 
 ### Look! A screenshot!
 
-![spheres](http://github.com/andrewnguyen/pytracer/screenshot.png)\
+![spheres](https://github.com/andrewnguyen/pytracer/raw/master/screenshot.png)\
 
