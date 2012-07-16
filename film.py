@@ -17,7 +17,7 @@ def get_pixel(film, x, y):
 def develop(film, x, y, color):
     film[y][x] = color
 
-ascii_lst = [' ', ',', '-', '+', '?', '*', '#', '@']
+ascii_lst = [' ', '.', ',', '-', '+', '?', '*', '#', '@']
 def ascii(c):
     return ascii_lst[c]
 

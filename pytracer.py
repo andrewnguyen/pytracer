@@ -15,11 +15,11 @@ PIXWIDTH = 100
 PIXHEIGHT = 80
 
 
-prims = [sc.make_sphere(vr.make_vector(0.5, 0.0, -4.0), 1.0),
-         sc.make_sphere(vr.make_vector(0.0, 2.0, -7.0), 1.0)]
+prims = [sc.make_sphere(vr.make_vector(0.0, 0.0, -4.0), 1.0),
+         sc.make_sphere(vr.make_vector(-3.0, -2.0, -11.0), 2.0)]
 
+lights = [lt.make_light(2.5, 4.0, 10.0, 7.0),]
 
-lights = [lt.make_light(-0.5, 2.0, 10.0, 7.0)]
 
 eye = vr.make_vector(0.0, 0.0, 0.0)
 up  = vr.make_vector(0.0, 1.0, 0.0)

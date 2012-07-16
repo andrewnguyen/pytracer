@@ -9,8 +9,8 @@ import math
 def make_view_geometry(eye, up, center):
     # (vector a) ** 3 -> seq (vector a)
     forward = vr.normalize(vr.sub_vector(center, eye))
-    side = vr.normalize(vr.cross_prod(up, forward))
-    up = vr.normalize(vr.cross_prod(forward, side))
+    side = vr.normalize(vr.cross_prod(forward, up))
+    up = vr.normalize(vr.cross_prod(side, forward))
     return [forward, side, up]
 
 def forward(geo):

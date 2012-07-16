@@ -9,16 +9,18 @@ import vector as vr
 
 def intersect_lights(scene, lights, pos, normal):
     # scene, light, vector -> float
-    color = 0.0
+    color = 1
     for light in lights:
         dirn = vr.normalize(vr.sub_vector(lt.get_pos(light), 
                                                   pos))
         new_ray = ry.make_ray(pos, dirn)
         t, n = intersect_scene(scene, new_ray)
         if not t:
-            incr = vr.dot_prod(dirn, normal)*lt.get_brightness(light)
+            dot_or_0 = max([vr.dot_prod(dirn, normal), 0])
+            incr = dot_or_0*lt.get_brightness(light)
             color += incr
-    return min([7, color])
+    if color:
+        return min([8, color])
     
 def intersect_scene(scene, ray):
     # scene, ray -> Maybe (float, vector)
