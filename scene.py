@@ -32,13 +32,11 @@ def intersect_sphere(sphere, ray):
     if det < 0:
         return None
     else:
-        print ("ABC: ", a, b, c)
         t1 = (-b + math.sqrt(det)) / (2*a)
         t2 = (-b - math.sqrt(det)) / (2*a)
         return min([t1, t2])
 
 def sphere_normal(sphere, pt):
-    print("PT: ", pt)
     return vr.normalize(vr.sub_vector(pt, get_center(sphere)))
 
 intersectors = {"sphere": intersect_sphere}

@@ -17,9 +17,7 @@ def intersect_lights(scene, lights, pos, normal):
         t, n = intersect_scene(scene, new_ray)
         if not t:
             incr = vr.dot_prod(dirn, normal)*lt.get_brightness(light)
-            print("INCR: ", incr)
             color += incr
-    print("COlor: ",color)
     return min([7, color])
     
 def intersect_scene(scene, ray):
@@ -29,7 +27,6 @@ def intersect_scene(scene, ray):
         ray = ry.normalize(ray)
         t = sc.intersect(prim_type)(prim, ray)
         if t and t > 0:
-            print("HIT!")
             normal =  sc.get_normal(prim_type)(prim, ry.at_t(ray, t) )
             return t, normal
         continue
@@ -39,13 +36,10 @@ def get_color(scene, lights, ray):
     # scene, lights, ray -> int
     t, normal = intersect_scene(scene, ray)
     ep = 1
+
     if not t or t <= 0:
         return 0
     if t:
-        print("t :", t)
-        print ("Ray: ", ray)
-        print ("Norm: ", normal)
-        print ("getting color")
         # calulate new pos...
         new_pos = ry.at_t(ray, t)
         new_pos = vr.add_vector(new_pos, vr.scale_mul(ep, normal))

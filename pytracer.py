@@ -32,9 +32,7 @@ def pytracer():
     for j in range(PIXHEIGHT):
         for i in range(PIXWIDTH):
             ray = camera(i, j)
-            print(i, j, ray)
             color = int(rt.get_color(prims, lights, ray))
-            print("COLOR ", i, j, color)
             fm.develop(film, i, j, color)
     fm.display(film)
 
